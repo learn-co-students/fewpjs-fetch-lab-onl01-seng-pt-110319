@@ -1,5 +1,20 @@
 function fetchBooks() {
 
+  const fetcher = fetch('https://anapioficeandfire.com/api/books')
+  // using fetch to literally fetch data from the game of thrones api 
+  .then(resp => resp.json())
+  // taking our response and converting it to json
+  .then(json => renderBooks(json));
+  //  taking our json response and passing it to the renderBooks() function passing in the json as an argument
+return fetcher;
+// return the fetch promise
+
+// OR 
+  // return fetch('https://anapioficeandfire.com/api/books')
+  // .then(resp => resp.json())
+  // .then(json => renderBooks(json));
+
+
 }
 
 function renderBooks(books) {
